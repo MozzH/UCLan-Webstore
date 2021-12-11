@@ -200,7 +200,7 @@ hoodies.forEach(function (hoodie) {
             <p>Color: ${hoodie.color}</p>
             <p>${hoodie.description}</p>
             <p class="price">${hoodie.price}</p>
-            <p><button>Add to Cart</button></p>
+            <p><button>Buy</button></p>
         </div>
     `;
 
@@ -217,7 +217,7 @@ tshirts.forEach(function (tshirt) {
             <p>Color: ${tshirt.color}</p>
             <p>${tshirt.description}</p>
             <p class="price">${tshirt.price}</p>
-            <p><button>Add to Cart</button></p>
+            <p><button>Buy</button></p>
         </div>
     `;
 
@@ -234,7 +234,7 @@ jumpers.forEach(function (jumper) {
             <p>Color: ${jumper.color}</p>
             <p>${jumper.description}</p>
             <p class="price">${jumper.price}</p>
-            <p><button>Add to Cart</button></p>
+            <p><button>Buy</button></p>
         </div>
     `;
 

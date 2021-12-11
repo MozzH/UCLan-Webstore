@@ -161,8 +161,10 @@ let jumpers = [
     ['UCLan Logo Jumper','Light Grey','cotton authentic character and practicality are combined in this winter jumper for students that goes with everything to create casual looks',' Only £29.99','images/items/jumpers/jumper (40).jpg']
 ]
 
+/* Objectifying products */
 hoodies.forEach((element, index) => {
     let objHoodie = {}
+    objHoodie.id = index
     objHoodie.type = element[0]
     objHoodie.color = element[1]
     objHoodie.description = element[2]
@@ -173,6 +175,7 @@ hoodies.forEach((element, index) => {
 
 tshirts.forEach((element, index) => {
     let objTshirt = {}
+    objTshirt.id = index
     objTshirt.type = element[0]
     objTshirt.color = element[1]
     objTshirt.description = element[2]
@@ -183,6 +186,7 @@ tshirts.forEach((element, index) => {
 
 jumpers.forEach((element, index) => {
     let objJumpers = {}
+    objJumpers.id = index
     objJumpers.type = element[0]
     objJumpers.color = element[1]
     objJumpers.description = element[2]
@@ -191,6 +195,7 @@ jumpers.forEach((element, index) => {
     jumpers[index] = objJumpers
 })
 
+
 //Evaluate each hoodie and display its details
 hoodies.forEach(function (hoodie) {
     let card = `
@@ -198,8 +203,8 @@ hoodies.forEach(function (hoodie) {
             <img class="product-image" src="${hoodie.image}">
             <h1 class="product-type">${hoodie.type}</h1>
             <p>Color: ${hoodie.color}</p>
-            <p>${hoodie.description}</p>
-            <p class="price">${hoodie.price}</p>
+             <p>${hoodie.description} <a href="#" onclick="addToSessionStorageHoodie(${hoodie.id})">Read more</a> </p>
+            <p class="price">${hoodie.price} </p>
             <p><button>Buy</button></p>
         </div>
     `;
@@ -215,7 +220,7 @@ tshirts.forEach(function (tshirt) {
             <img class="product-image" src="${tshirt.image}">
             <h1 class="product-type">${tshirt.type}</h1>
             <p>Color: ${tshirt.color}</p>
-            <p>${tshirt.description}</p>
+            <p>${tshirt.description} <a href="#" onclick="addToSessionStorageTshirt(${tshirt.id})">Read more</a> </p>
             <p class="price">${tshirt.price}</p>
             <p><button>Buy</button></p>
         </div>
@@ -233,7 +238,7 @@ jumpers.forEach(function (jumper) {
             <h1 class="product-type">${jumper.type}</h1>
             <p>Color: ${jumper.color}</p>
             <p>${jumper.description}</p>
-            <p class="price">${jumper.price}</p>
+            <p class="price">${jumper.price} <a href="#" onclick="addToSessionStorageJumper(${jumper.id})">Read more</a> </p>
             <p><button>Buy</button></p>
         </div>
     `;
@@ -243,6 +248,23 @@ jumpers.forEach(function (jumper) {
 });
 
 
+//Function to store item in session storage using a unique ID
+function addToSessionStorageHoodie(id) {
+    const hoodie = hoodies[id]
+    sessionStorage.setItem("item", JSON.stringify(hoodie))
+}
+
+//Function to store item in session storage using a unique ID
+function addToSessionStorageTshirt(id) {
+    const tshirt = tshirts[id]
+    sessionStorage.setItem("item", JSON.stringify(tshirt))
+}
+
+//Function to store item in session storage using a unique ID
+function addToSessionStorageJumper(id) {
+    const jumper = jumpers[id]
+    sessionStorage.setItem("item", JSON.stringify(jumper))
+}
 
 
 

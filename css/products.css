@@ -10,8 +10,12 @@
     text-align: center;
 }
 
+.product-type{
+    color: #f2be1a;
+}
+
 .price {
-    color: grey;
+    color: #000000;
     font-size: 22px;
 }
 
